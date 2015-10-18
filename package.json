@@ -1,0 +1,21 @@
+{
+  "name": "AppPlatform-Plugin",
+  "version": "1.0.0",
+  "description": "Cordova Plugin For app in appPlatform",
+  "cordova": {
+    "id": "AppPlatform-Plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yagao0o/AppPlatform-Plugin.git"
+  },
+  "keywords": [
+    "cordova",
+		"chinamobile",
+		"app-platform"
+  ],
+  "author": "luyz@Inspur.com"
+}
