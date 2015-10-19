@@ -36,11 +36,6 @@ public class AppPlatformPlugin extends CordovaPlugin {
 		
 		if(action.equals("setPackageName")){
 			this.packageName = args.getString(0);
-			cb.success("[ "  + this.packageName + " ]");
-			return true;
-		}
-		
-		if(action.equals("init")){
 			platform = Platform.getInstance(this.cordova.getActivity().getApplicationContext(), callback);
 			platform.bindService();
 			cb.success("Seems good! " + platform.toString());
