@@ -6,7 +6,7 @@
 	<name>AppPlatform Plugin</name>
 	<author>Inspur Luyz</author>
 	<description>AppPlatform-Plugin</description>
-	
+
 	<js-module src="www/AppPlatform.js" name="AppPlatform">
 		<clobbers target="AppPlatform"/>
 	</js-module>
@@ -14,10 +14,10 @@
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="AppPlatform">
-				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>				
+				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
 			</feature>
 		</config-file>
 		<source-file src="src/android/AppPlatformPlugin.java" target-dir="src/inspur/chinamobile/sd/cordova/plugin"/>
-		<source-file src="src/android/libs/platform2.0test.jar" target-dir="libs" />
+		<source-file src="src/android/libs/platform3.0test.jar" target-dir="libs" />
 	</platform>
 </plugin>
