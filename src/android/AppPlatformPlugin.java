@@ -6,8 +6,8 @@ import java.util.*;
 import android.content.*;
 import android.util.*;
 
-import com.inspur.zsyw.platform.Platform;
-import com.inspur.zsyw.platform.Platform.PlatformCallback;
+import droid.app.hp.api.platform.Platform;
+import droid.app.hp.api.platform.Platform.PlatformCallback;
 
 public class AppPlatformPlugin extends CordovaPlugin {
 	private String packageName = "";
@@ -31,7 +31,7 @@ public class AppPlatformPlugin extends CordovaPlugin {
 		}
 		@Override
 		public void onServiceConnected() {
-      this.type = "userInfo";
+      type = "userInfo";
 			platform.getUserInfo(packageName);
 		}
 	};
