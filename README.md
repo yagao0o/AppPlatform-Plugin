@@ -1,5 +1,5 @@
 ### 安装
-``cordova plugin add MY-PLUGIN-NAME``
+``cordova plugin add https://github.com/yagao0o/AppPlatform-Plugin.git``
 ### 使用方法：
 - cordova 2:
 ``
