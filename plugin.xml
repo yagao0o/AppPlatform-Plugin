@@ -12,13 +12,11 @@
 	</js-module>
 	<!-- android -->
 	<platform name="android">
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-      <activity android:name="MainActivity" android:label="@string/activity_name">
-        <intent-filter>
-          <action android:name="com.inspur.zsyw.APP" />
-          <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-      </activity>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+      <intent-filter>
+        <action android:name="com.inspur.zsyw.APP" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
     </config-file>
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="AppPlatform">
