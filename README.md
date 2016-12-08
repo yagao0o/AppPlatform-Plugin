@@ -11,3 +11,6 @@ window.plugins.AppPlatform.setPackageName('instance-name', callback)
 ``
 window.plugins.AppPlatform.setPackageName('instance-name', callback)
 ``
+
+### 移除应用图标
+添加Android平台后, 在AndroidManifest.xml中, 移除自带的应用图标显示，一般为
