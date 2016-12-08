@@ -18,6 +18,10 @@
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </config-file>
+    <edit-config file="AndroidManifest.xml" target='/manifest/application/activity/intent-filter[android:label="@string/launcher_name"]' mode="overwrite">
+      <action android:name="com.inspur.zsyw.APP" />
+      <category android:name="android.intent.category.DEFAULT" />
+    </edit-config>
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="AppPlatform">
 				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
@@ -25,5 +29,6 @@
 		</config-file>
 		<source-file src="src/android/AppPlatformPlugin.java" target-dir="src/inspur/chinamobile/sd/cordova/plugin"/>
 		<source-file src="src/android/libs/platform3.0test.jar" target-dir="libs" />
+
 	</platform>
 </plugin>
