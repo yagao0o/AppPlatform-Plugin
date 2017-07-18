@@ -41,9 +41,13 @@ public class AppPlatformPlugin extends CordovaPlugin {
 		if("setPackageName".equals(action)){
 			this.cb = cb;
 			this.packageName = args.getString(0);
-      this.type = "connect";
+            this.type = "connect";
 			platform = Platform.getInstance(this.cordova.getActivity().getApplicationContext(), callback);
 			platform.bindService();
+			return true;
+		} else if("getTel".equals(action)) {
+			String brobandTel = this.cordova.getActivity().getIntent().getStringExtra("brobandTel");
+			cb.success(brobandTel);
 			return true;
 		}
 
