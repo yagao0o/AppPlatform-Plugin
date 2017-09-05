@@ -50,17 +50,20 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			platform = Platform.getInstance(this.cordova.getActivity().getApplicationContext(), callback);
 			platform.bindService();
 			return true;
-		} else if("getToken".equals(action)) {
+		}
+    else if("getToken".equals(action)) {
 			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
 			cb.success(token);
 			return true;
-		} else if("startCamera".equals(action)) {//启动掌上拍照
+		}
+    else if("startCamera".equals(action)) {
+      //启动掌上拍照
 			String formNo = args.getString(0);//工单编号
 			String flowId = args.getString(1);//工单流水号
 			String htName = args.getString(2);//环节名称
 			String tkiid = args.getString(3);//工作项ID
 			String templateName = args.getString(4);//工单分类
-			String token = args.getString(5);//工单分类
+			String token = args.getString(5);//掌上运维平台登录的token
 			boolean isReupload = args.getBoolean(6);//是否重新上传
 			Bundle bundle = new Bundle();
 			bundle.putString("formNo", formNo);
@@ -86,14 +89,16 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			}
 			this.cordova.getActivity().startActivity(intent);
 			return true;
-		} else if("startCallRecorder".equals(action)) {//启动录音
+		}
+    else if("startCallRecorder".equals(action)) {
+      //启动通话录音
 			String formNo = args.getString(0);//工单编号
 			String flowId = args.getString(1);//工单流水号
 			String htName = args.getString(2);//环节名称
 			String tkiid = args.getString(3);//工作项ID
 			String contacterTel = args.getString(4);//联系人电话
 			String templateName = args.getString(5);//工单分类
-			String token = args.getString(6);//工单分类
+			String token = args.getString(6);//掌上运维平台登录的token
 			Bundle bundle = new Bundle();
 			bundle.putString("formNo", formNo);
 			bundle.putString("flowId", flowId);
@@ -118,7 +123,9 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			}
 			this.cordova.getActivity().startActivity(intent);
 			return true;
-		} else if("startLabelPrint".equals(action)) {//启动标签打印
+		}
+    else if("startLabelPrint".equals(action)) {
+      //启动标签打印
 			String houseId4Show = args.getString(0);//房号ID
 			String houseName4Show = args.getString(1);//房号信息
 			String hold_device_id4show = args.getString(2);//设备ID
