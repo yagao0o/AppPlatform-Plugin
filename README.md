@@ -38,6 +38,12 @@
   参数：房号ID,房号信息,设备ID,设备信息。
   返回：无。
 
+5. 启动其他App
+  ```
+  AppPlatform.openAndroidApp(packageName, activityName, callback)
+  ```
+  参数：packageName,activityName
+  返回：无。
 ### 移除应用图标
 添加Android平台后, 在AndroidManifest.xml中, 移除自带的应用图标显示，需要手动删除
 ```

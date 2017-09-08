@@ -152,6 +152,26 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			this.cordova.getActivity().startActivity(intent);
 			return true;
 		}
+    else if("openAndroidApp".equals(action)) {
+      //启动其他应用
+			String packageName = args.getString(0);//packageName
+			String activityName = args.getString(1);//activityName
+			Bundle bundle = new Bundle();
+			Intent intent = new Intent();
+			intent.addCategory(Intent.CATEGORY_DEFAULT);
+			intent.setComponent(new ComponentName(packageName,activityName));
+			intent.putExtras(bundle);
+			intent.putExtra("zsyw", "zsyw");
+			PackageManager pm = this.cordova.getActivity().getPackageManager();
+			List<ResolveInfo> activities = pm.queryIntentActivities(intent,
+							PackageManager.MATCH_DEFAULT_ONLY);
+			if (activities == null || activities.size() < 1) {
+				  Toast.makeText(this.cordova.getActivity(), "未安装\"该应用\"", Toast.LENGTH_LONG).show();
+					return true;
+			}
+			this.cordova.getActivity().startActivity(intent);
+			return true;
+		}
 
 		return false;
 	}

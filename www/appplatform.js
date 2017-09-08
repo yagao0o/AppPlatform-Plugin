@@ -15,5 +15,8 @@ AppPlatform.startCallRecorder = function(formNo,flowId,htName,tkiid,contacterTel
 AppPlatform.startLabelPrint = function(houseId4Show,houseName4Show,hold_device_id4show,hold_device_name4show, cb){
 	cordova.exec(function(result){cb(null,result)},cb, 'AppPlatform','startLabelPrint',[houseId4Show,houseName4Show,hold_device_id4show,hold_device_name4show])
 };
+AppPlatform.openAndroidApp = function(packageName,activityName, cb){
+	cordova.exec(function(result){cb(null,result)},cb, 'AppPlatform','openAndroidApp',[packageName,activityName])
+};
 
 module.exports = AppPlatform;
