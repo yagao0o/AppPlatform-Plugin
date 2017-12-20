@@ -49,7 +49,7 @@
   ```
   AppPlatform.openAndroidAppWithParam(packageName, activityName, params, callback)
   ```
-  参数：packageName,activityName, params
+  参数：packageName,activityName, params (格式：key1=value1&key2=value2)
   返回：无。
 ### 移除应用图标
 添加Android平台后, 在AndroidManifest.xml中, 移除自带的应用图标显示，需要手动删除
