@@ -18,5 +18,8 @@ AppPlatform.startLabelPrint = function(houseId4Show,houseName4Show,hold_device_i
 AppPlatform.openAndroidApp = function(packageName,activityName, cb){
 	cordova.exec(function(result){cb(null,result)},cb, 'AppPlatform','openAndroidApp',[packageName,activityName])
 };
+AppPlatform.openAndroidAppWithParam = function(packageName, activityName, params, cb){
+	cordova.exec(function(result){cb(null,result)},cb, 'AppPlatform', 'openAndroidAppWithParam', [packageName,activityName, params])
+};
 
 module.exports = AppPlatform;
