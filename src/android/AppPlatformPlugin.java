@@ -6,11 +6,9 @@ import java.util.*;
 import android.content.*;
 import android.util.*;
 import android.os.Bundle;
-// import java.util.List;
 import android.widget.Toast;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-
 import droid.app.hp.api.platform.Platform;
 import droid.app.hp.api.platform.Platform.PlatformCallback;
 
@@ -156,12 +154,14 @@ public class AppPlatformPlugin extends CordovaPlugin {
       //启动其他应用
 			String packageName = args.getString(0);//packageName
 			String activityName = args.getString(1);//activityName
+			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
 			Bundle bundle = new Bundle();
 			Intent intent = new Intent();
 			intent.addCategory(Intent.CATEGORY_DEFAULT);
 			intent.setComponent(new ComponentName(packageName,activityName));
 			intent.putExtras(bundle);
 			intent.putExtra("zsyw", "zsyw");
+			intent.putExtra("token", token);
 			PackageManager pm = this.cordova.getActivity().getPackageManager();
 			List<ResolveInfo> activities = pm.queryIntentActivities(intent,
 							PackageManager.MATCH_DEFAULT_ONLY);
@@ -177,20 +177,19 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			String packageName = args.getString(0);//packageName
 			String activityName = args.getString(1);//activityName
 			String params = args.getString(2);//activityName
+			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
 			Bundle bundle = new Bundle();
 			Intent intent = new Intent();
 			intent.addCategory(Intent.CATEGORY_DEFAULT);
 			intent.setComponent(new ComponentName(packageName,activityName));
 			intent.putExtras(bundle);
 			intent.putExtra("zsyw", "zsyw");
+			intent.putExtra("token", token);
 			if (params.length() > 0) {
 				String[] keyValueList = params.split("&");
 				for(int i = 0; i < keyValueList.length; i++){
 					String[] keyAndValue = keyValueList[i].split("=");
 					intent.putExtra(keyAndValue[0],keyAndValue[1]);
-					System.out.println("LUYZ===============================================");
-					System.out.println(keyAndValue[0] + "------" + keyAndValue[1]);
-					System.out.println("LUYZ===============================================");
 				}
 			}
 			PackageManager pm = this.cordova.getActivity().getPackageManager();
