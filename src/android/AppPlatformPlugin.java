@@ -188,6 +188,9 @@ public class AppPlatformPlugin extends CordovaPlugin {
 				for(int i = 0; i < keyValueList.length; i++){
 					String[] keyAndValue = keyValueList[i].split("=");
 					intent.putExtra(keyAndValue[0],keyAndValue[1]);
+					System.out.println("LUYZ===============================================");
+					System.out.println(keyAndValue[0] + "------" + keyAndValue[1]);
+					System.out.println("LUYZ===============================================");
 				}
 			}
 			PackageManager pm = this.cordova.getActivity().getPackageManager();
