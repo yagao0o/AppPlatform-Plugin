@@ -182,13 +182,13 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			String packageName = args.getString(0);//packageName
 			String activityName = args.getString(1);//activityName
 			String params = args.getString(2);//activityName
+			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
 			System.out.println("=================================");
 			System.out.println(packageName);
 			System.out.println(activityName);
 			System.out.println(params);
 			System.out.println(token);
 			System.out.println("=================================");
-			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
 			Bundle bundle = new Bundle();
 			Intent intent = new Intent();
 			intent.addCategory(Intent.CATEGORY_DEFAULT);
