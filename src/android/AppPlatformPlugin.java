@@ -155,6 +155,11 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			String packageName = args.getString(0);//packageName
 			String activityName = args.getString(1);//activityName
 			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
+			System.out.println("=================================");
+			System.out.println(packageName);
+			System.out.println(activityName);
+			System.out.println(token);
+			System.out.println("=================================");
 			Bundle bundle = new Bundle();
 			Intent intent = new Intent();
 			intent.addCategory(Intent.CATEGORY_DEFAULT);
@@ -166,17 +171,23 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			List<ResolveInfo> activities = pm.queryIntentActivities(intent,
 							PackageManager.MATCH_DEFAULT_ONLY);
 			if (activities == null || activities.size() < 1) {
-				  Toast.makeText(this.cordova.getActivity(), "未安装\"该应用\"", Toast.LENGTH_LONG).show();
+				  Toast.makeText(this.cordova.getActivity(), "调用其他App错误：未安装该应用", Toast.LENGTH_LONG).show();
 					return true;
 			}
 			this.cordova.getActivity().startActivity(intent);
 			return true;
 		}
-		else if("openAndroidAppWithParam".equals(action)) {
+		else if("openAndroidAppWithParam".equals(action)) {			
       //启动其他应用
 			String packageName = args.getString(0);//packageName
 			String activityName = args.getString(1);//activityName
 			String params = args.getString(2);//activityName
+			System.out.println("=================================");
+			System.out.println(packageName);
+			System.out.println(activityName);
+			System.out.println(params);
+			System.out.println(token);
+			System.out.println("=================================");
 			String token = this.cordova.getActivity().getIntent().getStringExtra("token");
 			Bundle bundle = new Bundle();
 			Intent intent = new Intent();
@@ -196,7 +207,7 @@ public class AppPlatformPlugin extends CordovaPlugin {
 			List<ResolveInfo> activities = pm.queryIntentActivities(intent,
 							PackageManager.MATCH_DEFAULT_ONLY);
 			if (activities == null || activities.size() < 1) {
-				  Toast.makeText(this.cordova.getActivity(), "未安装\"该应用\"", Toast.LENGTH_LONG).show();
+				  Toast.makeText(this.cordova.getActivity(), "调用错误：未安装该应用。", Toast.LENGTH_LONG).show();
 					return true;
 			}
 			this.cordova.getActivity().startActivity(intent);
