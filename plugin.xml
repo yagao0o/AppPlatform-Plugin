@@ -18,7 +18,7 @@
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </config-file>
-		<config-file target="src/main/res/xml/config.xml" parent="/*">
+		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="AppPlatform">
 				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
 			</feature>
