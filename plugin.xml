@@ -12,17 +12,17 @@
 	</js-module>
 	<!-- android -->
 	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="AppPlatform">
+				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
+			</feature>
+		</config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
       <intent-filter>
         <action android:name="com.inspur.zsyw.APP" />
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </config-file>
-		<config-file target="config.xml" parent="/*">
-			<feature name="AppPlatform">
-				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
-			</feature>
-		</config-file>
 		<source-file src="src/android/AppPlatformPlugin.java" target-dir="src/inspur/chinamobile/sd/cordova/plugin"/>
 		<source-file src="src/android/libs/platform3.0test.jar" target-dir="libs" />
 	</platform>
