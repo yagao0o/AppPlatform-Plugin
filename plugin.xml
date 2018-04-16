@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	id="AppPlatform-Plugin"
-	version="1.3.2">
+	version="1.4.0">
 	<name>AppPlatform Plugin</name>
 	<author>Inspur Luyz</author>
 	<description>AppPlatform-Plugin</description>
@@ -12,7 +12,7 @@
 	</js-module>
 	<!-- android -->
 	<platform name="android">
-		<config-file target="res/xml/config.xml" parent="/*">
+		<config-file target="app/src/main/res/xml/config.xml" parent="/*">
 			<feature name="AppPlatform">
 				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
 			</feature>
