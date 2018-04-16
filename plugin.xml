@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	id="AppPlatform-Plugin"
-	version="1.4.0">
+<plugin 
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android" id="AppPlatform-Plugin" version="1.4.0">
 	<name>AppPlatform Plugin</name>
 	<author>Inspur Luyz</author>
 	<description>AppPlatform-Plugin</description>
-
+	<engines>
+		<engine name="cordova" version=">=6.1.0" />
+		<engine name="cordova-android" version=">=6.4.0" />
+	</engines>
 	<js-module src="www/AppPlatform.js" name="AppPlatform">
 		<clobbers target="AppPlatform"/>
 	</js-module>
 	<!-- android -->
 	<platform name="android">
-		<config-file target="app/src/main/res/xml/config.xml" parent="/*">
+		<config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
+			<intent-filter>
+				<action android:name="com.inspur.zsyw.APP" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</config-file>
+		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="AppPlatform">
 				<param name="android-package" value="inspur.chinamobile.sd.cordova.plugin.AppPlatformPlugin"/>
 			</feature>
 		</config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest/application/activity">
-      <intent-filter>
-        <action android:name="com.inspur.zsyw.APP" />
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </config-file>
 		<source-file src="src/android/AppPlatformPlugin.java" target-dir="src/inspur/chinamobile/sd/cordova/plugin"/>
 		<source-file src="src/android/libs/platform3.0test.jar" target-dir="libs" />
 	</platform>
