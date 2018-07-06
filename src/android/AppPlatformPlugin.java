@@ -12,6 +12,8 @@ import android.content.pm.ResolveInfo;
 import droid.app.hp.api.platform.Platform;
 import droid.app.hp.api.platform.Platform.PlatformCallback;
 
+import com.chinamobile.platform.po.UserInfo;
+
 public class AppPlatformPlugin extends CordovaPlugin {
 	private String packageName = "";
 	private Platform platform;
@@ -40,8 +42,20 @@ public class AppPlatformPlugin extends CordovaPlugin {
 	};
 
 	public boolean execute(String action, JSONArray args, final CallbackContext cb) throws JSONException {
-
-		if("setPackageName".equals(action)){
+		if("getUserInfoYy".equals(action)){
+			String appKey = args.getString(0);
+			String userinfo = this.cordova.getActivity().getIntent().getStringExtra("userInfo");
+			try{
+				UserInfo info=com.chinamobile.platform.Platform.getUserInfo(appKey, userinfo);
+				JSONObject jsonObject = new JSONObject(info);
+				cb.success(jsonObject.toString());
+			} catch (Exception e) {
+				e.printStackTrace();
+				cb.error("获取用户信息失败");
+			}
+			return true;
+		}
+		else if("setPackageName".equals(action)){
 			this.cb = cb;
 			this.packageName = args.getString(0);
             this.type = "connect";

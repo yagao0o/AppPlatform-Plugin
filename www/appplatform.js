@@ -21,5 +21,8 @@ AppPlatform.openAndroidApp = function(packageName,activityName, cb){
 AppPlatform.openAndroidAppWithParam = function(packageName, activityName, params, cb){
 	cordova.exec(function(result){cb(null,result)},cb, 'AppPlatform', 'openAndroidAppWithParam', [packageName,activityName, params])
 };
+AppPlatform.getUserInfoYy = function(appKey, cb){
+	cordova.exec(function(result){cb(null,result)},cb, 'AppPlatform','getUserInfoYy',[appKey])
+};
 
 module.exports = AppPlatform;

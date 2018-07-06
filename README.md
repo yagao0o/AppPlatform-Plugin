@@ -51,6 +51,14 @@
   ```
   参数：packageName,activityName, params (格式：key1=value1&key2=value2)
   返回：无。
+
+8. 登录亿阳掌上运维平台
+  ```
+  AppPlatform.getUserInfoYy(appKey, callback)
+  ```
+  参数：亿阳提供的appKey。
+  返回：Json格式的userinfo。
+
 ### 移除应用图标
 添加Android平台后, 在AndroidManifest.xml中, 移除自带的应用图标显示，需要手动删除
 ```
